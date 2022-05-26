@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")();
-
+console.clear();
 
 // O programa deve fazer 5 perguntas ao usuário com respostas de sim ou não.
 // Caso o usuário responda sim, a 4 perguntas ou mais, devemos retornar que ele é culpado.

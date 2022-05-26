@@ -5,3 +5,18 @@
 // Se a nota for entre 8.0 e 9.0, deve exibir a nota B.
 // Por fim, se for entre 9.0 e 10.0, deve exibir um belo de um A.
 
+const prompt = require("prompt-sync")();
+
+let nota = +prompt('Digite a nota do aluno: ');
+
+if(nota < 6){
+    console.log('F');
+}else if(nota >= 6 && nota < 7){
+    console.log('D');
+}else if(nota >= 7 && nota < 8){
+    console.log('C');
+}else if(nota >= 8 && nota < 9){
+    console.log('B');
+}else if(nota >= 9){
+    console.log('Um belo A');
+}

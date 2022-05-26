@@ -32,11 +32,11 @@ console.log('*******************************************************************
 console.log('*                                                                              *');
 
 const perguntas = [
-    prompt('*                      Quer mesmo isso para sua vida?                          * resposta = '),
-    prompt('*Ao começar o curso, está disposto a dar seu melhor para concluí-lo com êxito ?* resposta = '),
-    prompt('*      Está disposto a muitas ocasiões abrir mão de diversão para estudar?     * resposta = '),
-    prompt('* Está disposto a enfrentar ansiedade e estresse para conseguir o que deseja?  * resposta = '),
-    prompt('*           Chegou ao final! Está orgulhoso do seu resultado?                  * resposta = ')
+    prompt('*                      Quer mesmo isso para sua vida?                          * resposta = ').toLowerCase(),
+    prompt('*Ao começar o curso, está disposto a dar seu melhor para concluí-lo com êxito ?* resposta = ').toLowerCase(),
+    prompt('*      Está disposto a muitas ocasiões abrir mão de diversão para estudar?     * resposta = ').toLowerCase(),
+    prompt('* Está disposto a enfrentar ansiedade e estresse para conseguir o que deseja?  * resposta = ').toLowerCase(),
+    prompt('*           Chegou ao final! Está orgulhoso do seu resultado?                  * resposta = ').toLowerCase()
 ];
 
 console.log('*                                                                              *');
@@ -56,30 +56,30 @@ switch(resostasSim){
         console.log('********************************************************************************');
         console.log('* Infelizmente você ainda não tomou uma decisão e vai ficar na carreira atual! *');
         console.log('********************************************************************************');
-        break;
-        case 2:
+                break;
+    case 2:
         console.log('********************************************************************************');
         console.log('*Você deu o primeiro passo, mas não  é o suficiente para alcançar o que deseja!*');
         console.log('********************************************************************************');
-        break;
-        case 3:
+                break;
+    case 3:
         console.log('********************************************************************************');
         console.log('*              Você pode concluir o curso, mas ele não faz milagre.            *');
         console.log('*      SUA CARREIRA DEPENDE DE VOCÊ, E O QUE VOCÊ FEZ NÃO FOI O SUFICIENTE     *');
         console.log('********************************************************************************');
-        break;
-        case 4:
-            console.log('********************************************************************************');
-            console.log('*    VOCÊ CHEGOU ONDE SEMPRE QUIS, MAS NÃO COMO O GRANDE DEV QUE QUERIA SER!   *');
-            console.log('********************************************************************************');
-            break;
-            case 5:
+                break;
+    case 4:
+        console.log('********************************************************************************');
+        console.log('*    VOCÊ CHEGOU ONDE SEMPRE QUIS, MAS NÃO COMO O GRANDE DEV QUE QUERIA SER!   *');
+        console.log('********************************************************************************');
+                break;
+     case 5:
         console.log('********************************************************************************');
         console.log('*        VOCÊ ALCANÇOU O QUE SEMPRE QUIS! PARABÉNS, VOCÊ É UM ÓTIMO DEV!       *');
         console.log('********************************************************************************');
-        break;
+                break;
         
-        default:
+    default:
         console.log('********************************************************************************');
         console.log('*               Nem uma resposta sim? Você não quer mesmo isso!                *');
         console.log('********************************************************************************');
