@@ -16,7 +16,7 @@ const saque = +prompt('Digite o valor que deseja sacar:');
 console.log();
 
 if(saque > 600 || saque < 10){
-    console.log('Valor máximo para saque: R$600,00');
+    console.log('Valor máximo para saque: R$600,00 e mínimo de R$10,00');
 }else{
     caixaEletronico(saque);
 }
@@ -24,36 +24,27 @@ if(saque > 600 || saque < 10){
 console.log();
 
 function caixaEletronico(saque){
-
     let notas = [1, 5, 10, 50 ,100];
     let notasSaque = [];
-    let valor = 0;
 
     while(saque > 0){
 
         if(saque >= notas[4]){
             notasSaque.push(notas[4]);
-            valor += notas[4];
             saque -= notas[4];
         }else if(saque < notas[4] && saque >= notas[3]){
             notasSaque.push(notas[3]);
-            valor += notas[3];
             saque -= notas[3];
         }else if(saque < notas[3] && saque >= notas[2]){
             notasSaque.push(notas[2]);
-            valor += notas[2];
             saque -= notas[2];
         }else if(saque < notas[2] && saque >= notas[1]){
-            notasSaque.push(notas[1]);
-            valor += notas[1];
             saque -= notas[1];
         }else{
             notasSaque.push(notas[0]);
-            valor += notas[0];
             saque -= notas[0];
         }
     }
-
     const arr = notasSaque.forEach(item => {
         console.log(`Nota retirada: R$${item},00`);
     });

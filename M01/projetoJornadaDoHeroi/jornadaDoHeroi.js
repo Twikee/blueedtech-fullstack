@@ -1,8 +1,7 @@
+// REGRA DE NEGócio
 //criar historia
 //ciar 5 perguntas com respostas sim ou não
 //contabilizar o número de respostas sim 
-
-const prompt = require("prompt-sync")();
 
 /* 
     No sonho de migrar de carreira, uma pessoa comum decide fazer um curso intensivo para ser um desenvolvedor fullstack
@@ -14,6 +13,9 @@ const prompt = require("prompt-sync")();
         4: Está disposto a enfrentar ansiedade e estresse para conseguir o que deseja?
         5: Chegou ao final! Está orgulhoso do seu resultado?
 */
+
+const prompt = require("prompt-sync")();
+
 console.clear();
 
 console.log(`
@@ -28,10 +30,16 @@ console.log(`
         *Para conseguir seu sonho, a pessoa em questão precisa estar atenta à 5 passos:*
         *                                                                              *
         ********************************************************************************
+`);
+
+console.log(`
+        ********************************************************************************
         ********************** RESPONDA s PARA SIM E n PARA NÃO ************************
         ********************************************************************************
-        *                                                                              *
 `);
+
+prompt('PRESSIONE ENTER PARA CONTINUAR...');
+console.clear();
 
 console.log('');
 
@@ -46,7 +54,6 @@ const perguntas = [
 console.log(`
         *                                                                              *
 `);
-
 
 let resostasSim = 0;
 

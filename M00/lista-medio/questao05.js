@@ -15,7 +15,7 @@
 
 console.clear();
 
-let salario = 2000;
+let salario = 279;
 const percentual = [0.2, 0.15, 0.1, 0.05];
 
 console.log(`O salário antes do reajuste é: ${salario}`);
