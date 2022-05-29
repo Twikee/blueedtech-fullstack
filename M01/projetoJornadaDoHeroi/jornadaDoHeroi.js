@@ -15,10 +15,10 @@
 */
 
 const prompt = require("prompt-sync")();
-
 console.clear();
 
 console.log(`
+
         ********************************************************************************
         *        No sonho de migrar de carreira, uma pessoa comum decide fazer um      *
         *             curso intensivo para ser um desenvolvedor fullstack              *
@@ -32,23 +32,23 @@ console.log(`
         ********************************************************************************
 `);
 
+
+prompt('PRESSIONE ENTER PARA CONTINUAR...');
+console.clear();
+
 console.log(`
         ********************************************************************************
         ********************** RESPONDA s PARA SIM E n PARA NÃO ************************
         ********************************************************************************
 `);
-
-prompt('PRESSIONE ENTER PARA CONTINUAR...');
-console.clear();
-
 console.log('');
 
 const perguntas = [
-    prompt('        *                      Quer mesmo isso para sua vida?                          * resposta = ').toLowerCase(),
-    prompt('        *Ao começar o curso, está disposto a dar seu melhor para concluí-lo com êxito ?* resposta = ').toLowerCase(),
-    prompt('        *      Está disposto a muitas ocasiões abrir mão de diversão para estudar?     * resposta = ').toLowerCase(),
-    prompt('        * Está disposto a enfrentar ansiedade e estresse para conseguir o que deseja?  * resposta = ').toLowerCase(),
-    prompt('        *           Chegou ao final! Está orgulhoso do seu resultado?                  * resposta = ').toLowerCase()
+    '        *                      Quer mesmo isso para sua vida?                          * resposta = ',
+    '        *Ao começar o curso, está disposto a dar seu melhor para concluí-lo com êxito ?* resposta = ',
+    '        *      Está disposto a muitas ocasiões abrir mão de diversão para estudar?     * resposta = ',
+    '        * Está disposto a enfrentar ansiedade e estresse para conseguir o que deseja?  * resposta = ',
+    '        *           Chegou ao final! Está orgulhoso do seu resultado?                  * resposta = '
 ];
 
 console.log(`
@@ -58,9 +58,7 @@ console.log(`
 let resostasSim = 0;
 
 perguntas.forEach((item) => {
-    if(item === 's'){
-        resostasSim++;
-    }
+    prompt(item) === 's' ? resostasSim++ : console.log('');
 });
 
 
