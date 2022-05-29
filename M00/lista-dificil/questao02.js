@@ -12,6 +12,8 @@ if(idade < 16){
     console.log(`Idade: ${idade} anos. Voto NEGADO!`);
 }else if(idade >= 16 && idade < 18){
     console.log(`Idade: ${idade} anos. Voto OPCIONAL!`);
-}else{
+}else if(idade >= 18 && idade < 65){
     console.log(`Idade: ${idade} anos. Voto OBRIGATÓRIO!`);
+}else{
+    console.log(`Idade: ${idade} anos. Voto OPCIONAL!`);
 }
