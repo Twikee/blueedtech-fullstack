@@ -21,46 +21,49 @@ console.clear();
 let numeroJogadores = +prompt('Quantos jogadores vão jogar? : ');
 const rodadas = +prompt('Digite a quantidade de rodadas: ');
 
+/////////////////////////////////////////////////////////////////////////////////////////
 //sistema de dados
 const min = 1;
 const max = 6;
-const valor = Math.floor(Math.random() * max) + min;
-
 let dados = (rodadas) => { 
     let valorTotal = 0;
     let rodadaAtual = rodadas;
+    let contagem = 0;
+    console.log();
     while(rodadaAtual > 0){
+        const valor = Math.floor(Math.random() * max - min + 1) + min;
         valorTotal += valor;
         rodadaAtual--;
+        if(contagem <= rodadas){
+          console.log(`Rodada ${contagem} : ${valor}`);
+        }
+        contagem++;
     }
+    console.log();
     return valorTotal;
 }
 
-
+///////////////////////////////////////////////////////////////////////////////////////
 //Jogadores
 let listaJogadores = [];
-let i = numeroJogadores;
 
-
-
-
-////////////////////////////////////////////////////
 //LÓGICA PARA CRIAR JOGADORES E ADICIONAR A LISTA
 function criarJogador(lista){
     const jogador = {
-        nome : prompt('Digite o nome do jogador: '),
+        nome : prompt('Digite o nome do jogador(a): '),
         placar : dados(rodadas)
     }
     lista.push(jogador);
+    console.log(`JOGADOR(A): ${jogador.nome} OBTEVE: ${jogador.placar} PONTOS`);
+    console.log(`/////////////////////////////////////////////////////////////`)
 }
 
-while(i > 0){
+while(numeroJogadores > 0){
     criarJogador(listaJogadores);
-    i--;
+    numeroJogadores--;
 }
-////////////////////////////////////////////////////
 
-//////////////////////////////////////////////////////
+
 //ORDENAR JOGADORES
 function ordenarJogadores(lista){
     lista.sort((a, b) => { 
@@ -73,10 +76,19 @@ function ordenarJogadores(lista){
         }
     })
 }
-////////////////////////////////////////////////////////
-
-
-
 ordenarJogadores(listaJogadores);
+///////////////////////////////////////////////////////////////////////////////////
+//EXIBIR VENCEDOR
+if(listaJogadores[0].placar === listaJogadores[1].placar){
+    console.log(`
+    
+    EMPATE!
+    
+    `);
+}else{
+    console.log(`
 
-console.log(listaJogadores)
+    O jogador(a) que venceu foi ${listaJogadores[0].nome} com ${listaJogadores[0].placar} pontos!
+
+    `);
+}
