@@ -17,19 +17,20 @@ do{
 }
 while(chave < 10);
 
-ordenarNumeros(numeros);
+numeros.sort();
 
+// ordenarNumeros(numeros);
 
-function ordenarNumeros(arr){
-    for(let i = 0; i < arr.length; i++){
-        for(let k = 0; k < arr.length - 1; k++){
-            if(arr[k] > arr[k + 1]){
-                let aux = arr[k];
-                arr[k] = arr[k + 1];
-                arr[k + 1] = aux;
-            }
-        }
-    }
-}
+// function ordenarNumeros(arr){
+//     for(let i = 0; i < arr.length; i++){
+//         for(let k = 0; k < arr.length - 1; k++){
+//             if(arr[k] > arr[k + 1]){
+//                 let aux = arr[k];
+//                 arr[k] = arr[k + 1];
+//                 arr[k + 1] = aux;
+//             }
+//         }
+//     }
+// }
 
 console.log(`Números presentes no array em ordem crescente:${numeros}`);
