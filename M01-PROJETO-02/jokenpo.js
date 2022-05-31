@@ -16,10 +16,9 @@ console.clear();
 let verificadorPrincipal = true;
 
 while(verificadorPrincipal){
-    console.log('Quantas rodadas deseja?')
+    console.log('Quantas rodadas deseja?');
     
     let rodadas = +prompt(': ');
-
 
     console.clear();
     
@@ -62,7 +61,7 @@ function jogar(rodadas){
 
                 do{
                     console.log('Escolha: [Pedra, Papel ou Tesoura]');
-                    escolhaJogador = prompt(': ').toLowerCase();
+                    escolhaJogador = prompt(': ').toLowerCase().trim();
 
                     if(escolhaJogador === 'pedra' || escolhaJogador === 'papel' || escolhaJogador === 'tesoura'){
                         verificador = false;
@@ -118,7 +117,7 @@ function jogar(rodadas){
                 }
 
                 console.log(`O PC escolheu ${arrEscolhas[escolhaPc]}`);
-                console.log()
+                console.log();
                 
                 contador--;
                 rodadaAtual++;
