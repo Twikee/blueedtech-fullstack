@@ -1,0 +1,20 @@
+{
+  "name": "blueedtech-fullstack",
+  "version": "1.0.0",
+  "description": "- Módulo 00:\r   * Lógica de programação com Scratch, Portugol e JavaScript.\r   * Projeto Detetive: O projeto conta com a utilização de array, estruturas condicionais (if else) e de repetição, também foi utilizada a função forEach com callback function.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Twikee/blueedtech-fullstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Twikee/blueedtech-fullstack/issues"
+  },
+  "homepage": "https://github.com/Twikee/blueedtech-fullstack#readme"
+}
