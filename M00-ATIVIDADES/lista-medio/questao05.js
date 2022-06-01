@@ -17,18 +17,19 @@ console.clear();
 
 let salario = 279;
 const percentual = [0.2, 0.15, 0.1, 0.05];
+const salarios = [280, 700, 1500];
 
 console.log(`O salário antes do reajuste é: ${salario}`);
 
-if(salario <= 280){
+if(salario <= salarios[0]){
     salario += salario * percentual[0];
     console.log(`O percentual adicionado é de 20%`);
     console.log(`O valor adicionado é de ${salario * percentual[0]}`);
-}else if(salario > 280 && salario <= 700){
+}else if(salario > salarios[0] && salario <= salarios[1]){
     salario += salario * percentual[1];
     console.log(`O percentual adicionado é de 15%`);
     console.log(`O valor adicionado é de ${salario * percentual[1]}`);
-}else if(salario > 700 && salario <= 1500){
+}else if(salario > salarios[1] && salario <= salarios[2]){
     salario += salario * percentual[2];
     console.log(`O percentual adicionado é de 10%`);
     console.log(`O valor adicionado é de ${salario * percentual[2]}`);
