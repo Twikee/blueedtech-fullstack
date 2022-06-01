@@ -24,21 +24,7 @@ while(verificadorPrincipal){
     
     jogar(rodadas);
 
-    console.log('Deseja jogar novamente? [1] = SIM | [2] = NÃO');
-    let reiniciar = +prompt(': ');
-
-    //secundary looping
-    while(reiniciar != 1 && reiniciar != 2){
-        console.log('Você digitou a opção errada');
-        console.log('Deseja jogar novamente? [1] = SIM | [2] = NÃO');
-        reiniciar = +prompt(': ');
-    }
-    
-    if(reiniciar === 1){
-        continue;
-    }else{
-        verificadorPrincipal = false;
-    }
+    verificadorPrincipal = reiniciarPartida();
 }
 
 //function play
@@ -111,17 +97,43 @@ function jogar(rodadas){
         rodadaAtual++;
     }
 
-    if(vitoriaJogador > vitoriaPc){
+    mostrarVencedor(vitoriaJogador, vitoriaPc);
+
+}
+
+//function winner
+function mostrarVencedor(vJogador, vPc){
+    if(vJogador > vPc){
         console.log();
-        console.log(`O jogador foi o vencedor com ${vitoriaJogador} rodadas vencidas!`);
+        console.log(`O jogador foi o vencedor com ${vJogador} rodadas vencidas!`);
         console.log();
-    }else if(vitoriaPc > vitoriaJogador){
+    }else if(vPc > vJogador){
         console.log();
-        console.log(`O PC foi o vencedor com ${vitoriaPc} rodadas vencidas!`);
+        console.log(`O PC foi o vencedor com ${vPc} rodadas vencidas!`);
         console.log();
     }else{
         console.log();
         console.log('O jogardor e o PC empataram!');
         console.log();
+    }
+}
+
+//function restart
+function reiniciarPartida(){
+    console.log('Deseja jogar novamente? [1] = SIM | [2] = NÃO');
+    let reiniciar = +prompt(': ');
+
+    while(reiniciar != 1 && reiniciar != 2){
+        console.log('Você digitou a opção errada');
+        console.log('Deseja jogar novamente? [1] = SIM | [2] = NÃO');
+        reiniciar = +prompt(': ');
+    }
+    
+    if(reiniciar === 2){
+        return false;
+    }else{
+        console.clear();
+        console.log('Nova partida:');
+        return true;
     }
 }
