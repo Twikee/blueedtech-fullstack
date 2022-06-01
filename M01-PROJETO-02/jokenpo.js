@@ -10,22 +10,51 @@ REQUISITOS:
     Perguntar se o Jogador quer jogar novamente: Se sim volte ao primeiro passo, se não finalize o programa.
 */
 
+
+
+
+//TROCAR IF ELSE POR SWITCH NA FUNÇÃO JOGAR
+//TENTAR UTILIZAR REGEXP PARA TRATAR OS INPUTS
+
 const prompt = require('prompt-sync')();
 console.clear();
 
 let verificadorPrincipal = true;
 
-//main looping
-while(verificadorPrincipal){
-    console.log('Quantas rodadas deseja?');  
-    let rodadas = +prompt(': ');
+console.log('Deseja jogar? [1] SIM | [2] NÃO');
+let escolhaCondicao = +prompt(': ');
 
-    console.clear();
-    
-    jogar(rodadas);
+try{
+    if(isNaN(escolhaCondicao)) throw "ERROR: Isso não é um NÚMERO!";
+    if(escolhaCondicao < 1 || escolhaCondicao > 2) throw "ERROR: Fora do intervalo!"
+    if(escolhaCondicao != 1){
+        verificadorPrincipal = false;
+    }
 
-    verificadorPrincipal = reiniciarPartida();
+    //main looping
+    while(verificadorPrincipal){
+        console.log('Quantas rodadas deseja?');  
+        let rodadas = +prompt(': ');
+        
+        console.clear();
+        
+        try {
+            if(isNaN(rodadas)) throw "ERROR: Isso não é um número!";
+            if(rodadas <= 0) throw "ERROR: Número inferior a 0!";
+            jogar(rodadas);
+        } catch (e) {
+            console.log(`Entrada inválida! ${e}`);
+            console.log(`Insira um NÚMERO maior que ZERO!`);
+        }finally{
+            verificadorPrincipal = reiniciarPartida();
+            console.log();
+            continue;
+        }
+    }
+}catch(e){
+    console.log(`Por favor, reinicie o jogo! ${e}`)
 }
+
 
 //function play
 function jogar(rodadas){
@@ -39,9 +68,7 @@ function jogar(rodadas){
     let verificador = true;
     
     while(rodadas > 0){
-
         let escolhaPc = Math.floor(Math.random() * 3);
-        let rodadaAtual = 1;
 
         do{
             console.log('Escolha: [Pedra, Papel ou Tesoura]');
@@ -52,53 +79,41 @@ function jogar(rodadas){
             }else{
                 console.log('Opção inválida. Escolha pedra, papel ou tesoura!');
             }
-
         }while(verificador);
         
-        //VERIFICAÇÃO 0.01
-        if(escolhaJogador === 'pedra' && arrEscolhas[escolhaPc] === 'papel'){
-            console.log();
-            console.log('Vencedor da rodada: PC!');
-            console.log();
-            vitoriaPc++;
-        }else if(escolhaJogador === 'pedra' && arrEscolhas[escolhaPc] === 'tesoura' ){
-            console.log();
-            console.log('Vencedor da rodada: Jogador!');
-            console.log();
-            vitoriaJogador++;
-        }else if(escolhaJogador === 'papel' && arrEscolhas[escolhaPc] === 'tesoura' ){
-            console.log();
-            console.log('Vencedor da rodada: PC!');
-            console.log();
-            vitoriaPc++;
-        }else if(escolhaJogador === 'papel' && arrEscolhas[escolhaPc] === 'pedra' ){
-            console.log();
-            console.log('Vencedor da rodada: Jogador!');
-            console.log();
-            vitoriaJogador++;
-        }else if(escolhaJogador === 'tesoura' && arrEscolhas[escolhaPc] === 'pedra' ){
-            console.log();
-            console.log('Vencedor da rodada: PC!');
-            console.log();
-            vitoriaPc++;
-        }else if(escolhaJogador === 'tesoura' && arrEscolhas[escolhaPc] === 'papel' ){
-            console.log();
-            console.log('Vencedor da rodada: Jogador!');
-            console.log();
-            vitoriaJogador++;
-        }else{
-            console.log('EMAPTE!');
-        }
+        //VERIFICAÇÃO 2.0
+        switch(true){
+            case escolhaJogador === 'pedra' && arrEscolhas[escolhaPc] === 'papel':
+                vitoriaPc++;
+                    break;
+            case escolhaJogador === 'pedra' && arrEscolhas[escolhaPc] === 'tesoura':
+                vitoriaJogador++;
+                    break;
+            case escolhaJogador === 'papel' && arrEscolhas[escolhaPc] === 'tesoura':
+                vitoriaPc++;
+                    break;
+            case escolhaJogador === 'papel'&& arrEscolhas[escolhaPc] === 'pedra':
+                vitoriaJogador++;
+                    break;
+            case escolhaJogador === 'tesoura' && arrEscolhas[escolhaPc] === 'pedra':
+                vitoriaPc++;
+                    break;
+            case escolhaJogador === 'tesoura' && arrEscolhas[escolhaPc] === 'papel':
+                vitoriaJogador++;
+                    break;
+
+            default:
+                console.log('Empate na rodada!');
+        }   
 
         console.log(`O PC escolheu ${arrEscolhas[escolhaPc]}`);
         console.log();
-        
-        rodadas--;
-        rodadaAtual++;
+        console.log(`Resultado da rodada:`);
+        console.log(`Jogador ${vitoriaJogador} | PC ${vitoriaPc}`);
+        console.log();
+        rodadas--; 
     }
-
     mostrarVencedor(vitoriaJogador, vitoriaPc);
-
 }
 
 //function winner
@@ -120,10 +135,11 @@ function mostrarVencedor(vJogador, vPc){
 
 //function restart
 function reiniciarPartida(){
-    console.log('Deseja jogar novamente? [1] = SIM | [2] = NÃO');
+    console.log('Deseja jogar? [1] = SIM | [2] = NÃO');
     let reiniciar = +prompt(': ');
 
     while(reiniciar != 1 && reiniciar != 2){
+        console.clear();
         console.log('Você digitou a opção errada');
         console.log('Deseja jogar novamente? [1] = SIM | [2] = NÃO');
         reiniciar = +prompt(': ');
