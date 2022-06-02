@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Twikee/blueedtech-fullstack/issues"
   },
-  "homepage": "https://github.com/Twikee/blueedtech-fullstack#readme"
+  "homepage": "https://github.com/Twikee/blueedtech-fullstack#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }
