@@ -8,7 +8,7 @@
 //     Repetir os passos 2, 3 e 4 de acordo com o número de rodadas escolhido;
 //     Ao final das repetições, mostrar quantas rodadas cada jogador ganhou;
 //     Determinar quem foi o grande campeão de acordo com a quantidade de vitórias de cada um (computador e jogador);
-//     Perguntar se o Jogador quer jogar novamente: Se sim volte ao primeiro passo, se não finalize o programa.
+//     ePerguntar se o Jogador quer jogar novamente: Se sim volte ao primiro passo, se não finalize o programa.
 
 const prompt = require('prompt-sync')();
 console.clear();
@@ -61,7 +61,7 @@ function jogar(rodadas){
     let verificador = true;
     
     while(rodadas > 0){
-        let escolhaPc = Math.floor(Math.random() * 3);
+        let escolhaPc = Math.floor(Math.random() * arrEscolhas.length);
 
         do{
             console.log('Escolha: [Pedra, Papel ou Tesoura]');
