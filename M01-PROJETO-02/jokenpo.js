@@ -114,13 +114,16 @@ function mostrarVencedor(vJogador, vPc){
     if(vJogador > vPc){
         console.log();
         console.log(`O jogador foi o vencedor com ${vJogador} rodadas vencidas!`);
+        console.log(`O pc perdeu por ${vPc} rodadas!`);
         console.log();
     }else if(vPc > vJogador){
         console.log();
         console.log(`O PC foi o vencedor com ${vPc} rodadas vencidas!`);
+        console.log(`O jogador perdeu por ${vJogador} rodadas!`);
         console.log();
     }else{
         console.log();
+        console.log(`Ambos ganharam ${vPc}`);
         console.log('O jogardor e o PC empataram!');
         console.log();
     }
