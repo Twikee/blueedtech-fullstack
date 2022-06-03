@@ -18,10 +18,8 @@
    ![image](https://user-images.githubusercontent.com/56365639/171666476-07fa5acc-7318-4bf7-823e-c036b975ce4d.png)
  
    </details>
-   
-     
-     
 
   ***
   
-[//]: <> (2. Jokenpo: O projeto conta com laços de repetição, funções, condicionais e tratamento de erro com Try...Catch/Finaly Throw.)
+   ## Jokenpo: 
+   O projeto conta com laços de repetição, funções, condicionais e tratamento de erro com Try...Catch/Finaly Throw.
