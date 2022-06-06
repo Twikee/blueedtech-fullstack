@@ -1,6 +1,6 @@
-console.clear();
-const prompt = require("prompt-sync")();
+let arr1 = [['X', 'X', 'X'], ['O', 'O', 'O']];
 
-let num = Math.floor(Math.random() * 3 + 1);
+let unic1 = new Set(arr1[0]);
 
-console.log(num);
+
+console.log(unic1);
