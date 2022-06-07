@@ -1,19 +1,4 @@
-let arr1 = [['X', 'O', 'I'], ['O', 'O', 'O']];
+// var two_d = [[1,2,3],[4,5,6],[7,8,9]];
+// var col3 = two_d.map(function(value,index) { return value[1]; });
 
-
-let unic1 = new Set(arr1[0]);
-console.log(unic1.size);
-// console.log(...arr1[0])
-
-
-
-// function funcArray(a, b, c){
-//     console.log('Valor: ',a);
-//     console.log('Índice: ',b);
-//     console.log('Array: ',c);
-//     console.log();
-//   }
-  
-//   let lista = ['Blue', 'EdTech', 'Módulo 1'];
-  
-//   lista.forEach(funcArray);
+// console.log(col3);
