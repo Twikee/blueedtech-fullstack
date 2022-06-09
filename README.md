@@ -23,3 +23,14 @@
   
    ## Jokenpo: 
    O projeto conta com laços de repetição, funções, condicionais e tratamento de erro com Try...Catch/Finaly Throw.
+  
+   <details>
+   <summary>✅ Clique aqui para exibir/esconder o <b><i>certificado</b></i>: </summary>
+ 
+   ![image](https://user-images.githubusercontent.com/56365639/172929752-abc90d42-3518-4889-bfdf-0356348c5433.png)
+
+   </details>
+  
+  ***
+  
+  
