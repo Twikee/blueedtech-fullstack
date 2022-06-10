@@ -1,13 +1,14 @@
-// var two_d = [[1,2,3],[4,5,6],[7,8,9]];
-// var col3 = two_d.map(function(value,index) { return value[1]; });
+const prompt = require('prompt-sync')();
 
-// console.log(col3);
+const condicoes = {
+    "linha-1": array[0][0] == array[0][1] && array[0][1] == array[0][2],
+    "linha-2": array[1][0] == array[1][1] && array[1][1] == array[1][2],
+    "linha-3": array[2][0] == array[2][1] && array[2][1] == array[2][2],
+    "coluna-1": array[0][0] == array[1][0] && array[1][0] == array[2][0],
+    "coluna-2": array[0][1] == array[1][1] && array[2][1] == array[0][1],
+    "coluna-3": array[0][2] == array[2][1] && array[2][1] == array[2][2],
+    "diagonal-1": array[0][0] == array[1][1] && array[1][1] == array[2][2],
+    "diagonal-2": array[2][0] == array[1][1] && array[1][1] == array[0][2],
+  };
 
-let arr = [[1, 2, 1], [2, 3, 4]];
-
-arr.findIndex((value, index) => {
-    if(value[index] == 1){
-        console.log(index);
-
-    }
-})
+  console.log(consicoes.JSON);
