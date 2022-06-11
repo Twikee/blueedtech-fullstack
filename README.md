@@ -34,3 +34,9 @@
   ***
   
   
+   ## Jogo da velha: 
+   O projeto conta com laços de repetição, funções, condicionais, objetos e tratamento de erro com Try...Catch Throw.
+  
+  ***
+  
+  
