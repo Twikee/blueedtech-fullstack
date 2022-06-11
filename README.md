@@ -9,7 +9,7 @@
   ### Projetos:
    
   ***
-   ## Jornada do Heroi:
+   ## Jornada do Heroi :superhero::superhero_man::
    O projeto conta com a utilização de array, estruturas condicionais (switch case) e de repetição, também foi utilizada a função forEach com callback function.
    
    <details>
@@ -21,7 +21,7 @@
 
   ***
   
-   ## Jokenpo: 
+   ## Jokenpo :facepunch::hand::v:: 
    O projeto conta com laços de repetição, funções, condicionais e tratamento de erro com Try...Catch/Finaly Throw.
   
    <details>
@@ -34,7 +34,7 @@
   ***
   
   
-   ## Jogo da velha: 
+   ## Jogo da velha :white_circle::older_adult::heavy_multiplication_x:: 
    O projeto conta com laços de repetição, funções, condicionais, objetos e tratamento de erro com Try...Catch Throw.
   
   ***
