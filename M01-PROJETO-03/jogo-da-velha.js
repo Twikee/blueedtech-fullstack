@@ -26,8 +26,8 @@ let arrTTT = [
   ["1:0", "1:1", "1:2"],
   ["2:0", "2:1", "2:2"]
 ];
-let controleGeral = true;
 
+let controleGeral = true;
 jogo(controleGeral, nomes, arrTTT);
 
 function jogo(controle, nomeJogador, array){
@@ -56,7 +56,6 @@ function jogo(controle, nomeJogador, array){
       let verificaVitoria = false;
   
       marcarTabela(array, nomeJogador, controleTurno);
-      
       console.clear();
 
       verificaVitoria = verificarVitoria(array, nomeJogador, controleTurno, vitoria);
@@ -73,7 +72,6 @@ function jogo(controle, nomeJogador, array){
           prompt("PRESSIONE ENTER PARA PRÓXIMA RODADA!");
           console.clear();
       }
-
       controleTurno++;
     }
   
@@ -100,7 +98,6 @@ function nomeJogador() {
   let nomeJogador = [];
 
   console.log("Digite seus nomes: ");
-
   nomeJogador.push(prompt("Quem será o jogador 1? "));
   nomeJogador.push(prompt("Quem será o jogador 2? "));
   
@@ -154,7 +151,6 @@ function marcarTabela(array, nomeJ, cTurno) {
     escolhaLinha = +prompt("Linha: ");
     escolhaColuna = +prompt("Coluna: ");
   }
-
   array[escolhaLinha].splice(escolhaColuna, 1, simbolo);
 }
 
