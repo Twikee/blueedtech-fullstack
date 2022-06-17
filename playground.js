@@ -1,10 +1,26 @@
-const prompt = require('prompt-sync')();
+function passarTempo(){
+ 
+    let timing1 = 1000;
+    let timing2 = 2000;
+    let timing3 = 3000;
 
-const array= [[1,2,3], [4,5,6], [7,8,9]];
+        setTimeout(() => {
+            console.clear();
+            console.log('.');
+        }, timing1);
+        setTimeout(() => {
+            console.clear();
+            console.log('..');
+        }, timing2);
+        setTimeout(() => {
+            console.clear();
+            console.log('...');
+        }, timing3);
 
-
-let valor = () => {
-  
 }
 
-console.log(valor);
+function game(){
+    passarTempo();
+}
+
+game();
