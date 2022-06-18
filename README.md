@@ -37,6 +37,13 @@
    ## Jogo da velha :white_circle::older_adult::heavy_multiplication_x:: 
    O projeto conta com laços de repetição, funções, condicionais, objetos e tratamento de erro com Try...Catch Throw.
   
+  <details>
+   <summary>✅ Clique aqui para exibir/esconder o <b><i>certificado</b></i>: </summary>
+  
+  ![image](https://user-images.githubusercontent.com/56365639/173703008-e832c216-acc6-4fbd-9f21-f3ddfb754242.png)
+  
+  </details>
+  
   ***
   
   
