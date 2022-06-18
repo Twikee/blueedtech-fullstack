@@ -1,26 +1,24 @@
-function passarTempo(){
- 
-    let timing1 = 1000;
-    let timing2 = 2000;
-    let timing3 = 3000;
-
-        setTimeout(() => {
-            console.clear();
-            console.log('.');
-        }, timing1);
-        setTimeout(() => {
-            console.clear();
-            console.log('..');
-        }, timing2);
-        setTimeout(() => {
-            console.clear();
-            console.log('...');
-        }, timing3);
-
-}
-
-function game(){
-    passarTempo();
-}
-
-game();
+const loading = (function () {
+    const P = [
+      'Loading.    ',
+      'Loading..   |',
+      'Loading...  /',
+      'Loading.... -',
+    ];
+  
+    const stopCondition = 30;
+    let currentCondition = 0;
+    let indexArray = 0;
+  
+    return setInterval(function () {
+      process.stdout.write('\r' + P[indexArray++]);
+  
+      indexArray &= 3;
+  
+      currentCondition++;
+  
+      if (currentCondition == stopCondition) {
+        clearInterval(loading);
+      }
+    }, 250);
+  })();

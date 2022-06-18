@@ -1,0 +1,94 @@
+Looping
+
+O jogador começa o dia, e a cada interação errada o dia reinicia da mesma forma, 
+só que ele terá mais conhecimento que liberará mais opções para serem realizadas.
+Tudo isso em alguns cíclos.
+
+Ao final desses ciclos de interação, irá dizer como o jogador se saiu e porquê ele teve que passar por tudo aquilo.
+
+-----------------------------------------------HISTÓRIA
+
+/INICIO\
+
+PRIMEIRO CICLO {
+
+    Você acorda e se prepara para iniciar um novo dia...
+
+    -Acho que hoje irei comer aquela sobra de pizza que ficou na geladeira, ainda pode estar boa...
+    -Vou passar naquela cafeteria para comprar algo e depois vou para o trabalho... É... Acho que vai ser bom...
+
+    No caminho até a cafeteria, você passa por algumas pessoas bem vestidas e logo após tropeça e fica machucado, um leve corte na mão direita...
+
+    {
+        Ir diretamente para cafeteria ou passar na farmácia que fica em frente?
+    }
+
+    Um assalto aconteceu na cafeteria... Infelizmente... Com várias vítimas fatais...
+
+    {
+        cafeteria: **********************o ciclo reinicia!
+
+        farmácia: {
+            Você viu aquilo tudo acontecer, já imaginou se estivesse lá? O que teria acontecido?
+
+            -Se eu fosse diretamente para cafeteria eu teria acabado como aquelas pessoas...
+
+            Pensativo, você sai da farmácia e continua andando em direção ao trabalho, imaginando o que teria se 
+            passado caso a sua escolha fosse a cafeteria...
+            ...
+            Você olhou antes de atravessar a rua?
+            ...
+            **********************o ciclo reinicia!
+        }
+    }
+}
+
+SEGUNDO CICLO{
+    Você acorda e se prepara para iniciar um novo dia...
+
+    - ...
+    -Que sonho estranho...
+
+    -Ai... Não lembro de me machucar... Deve ter acontecido antes de dormir...
+    -Não lembro ao certo o que aconteceu ontem...
+    -Vou comer fora antes de ir ao trabalho...
+    -Aquela cafeteria... Não foi coincidencia ter sonhado com ela...
+    -Gosto de lá.
+    
+    No caminho até a cafeteria, você passa por algumas pessoas bem vestidas e logo após você para e...
+
+    -Acho que já vi essas pessoas... Será que foi no meu sonho?
+
+    Você começa a seguir seu caminho...
+
+    -Aquele sonho agora me parece tão... real...
+    -Será que devo passar naquela farmácia novamente?
+
+    {
+        Ir diretamente para cafeteria ou passar na farmácia que fica em frente?
+    }
+
+        {
+        cafeteria: {
+            Você entra na cafeteria, se senta perto do balcão e faz seu pedido...
+
+            -Quero um capuccino por favor!
+
+            Enquanto você espera, algumas pessoas entram e anunciam um assalto...
+            *DEITEM NO CHÃO, MÃOS NA CABEÇA E PASSEM OS CELULARES AGORA!*
+
+            {
+                seguir as instruções dos assaltantes: {
+                    Você segue todas as instruções...
+                    
+                }
+
+                desafia-los:  
+            }
+        }
+
+        farmácia: {
+            
+        }
+    }
+}
