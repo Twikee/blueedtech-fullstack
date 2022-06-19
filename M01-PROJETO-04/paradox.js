@@ -330,7 +330,6 @@ function verificarEscolha(escolha){
         }else if(isTrue[1]){
             throw 'OPÇÃO NÃO É UM NÚMERO';
         }else{
-            console.log(isTrue[0], isTrue[1]);
             return false;
         }
        
