@@ -1,7 +1,8 @@
 'use strict';
 // Variáveis para armazenar os status do personagem. (1,0) FEITO
 // Perguntas que alteram esses status do personagem. (1,0) FEITO
-// Laço de repetição que determinará os ciclos onde a história vai se passar. Determinar o que acontecerá ao final do ciclo e como ficarão os status. (1,0)// Variável para controle da passagem do tempo. (1,0)
+// Laço de repetição que determinará os ciclos onde a história vai se passar. Determinar o que acontecerá ao final do ciclo e como ficarão os status. (1,0)
+// Variável para controle da passagem do tempo. (1,0)
 // Variáveis de controle dos status e situações da história. (1,0)
 // Condicionais para alterações dessas variáveis. (1,5)
 // Funções para executar cada uma das tarefas. (1,5)
@@ -16,6 +17,7 @@ const Person = {
     _nome: '',
     _idade: 'DESCONHECIDA',
     _profissao: 'DESCONHECIDO',
+    _memoria: 0,
     _gaveta: 
     [
         'Papeis',
@@ -38,10 +40,18 @@ const Person = {
         this._profissao = 'Físico';
     },
 
+    setMemoria:function (){
+        this._memoria += 33.3;
+    },
+    
 
 
     getNome: function(){
         return this._nome;
+    },
+
+    getMemoria: function(){
+        return this._memoria;
     },
 
     getIdade: function(){
@@ -67,6 +77,7 @@ console.clear();
 console.log(`Faça suas escolhas de acordo com o número indicado...`);
 prompt('Pressione a tecla ENTER para avançar os textos...');
 console.clear();
+
 let ciclo = 1;
 
 while(ciclo <= 4){
@@ -76,6 +87,7 @@ while(ciclo <= 4){
     prompt(`[NARRADOR] - Esse é o ciclo número ${ciclo}`);
     prompt(`Nome: ${Person.getNome()}`);
     prompt(`Idade: ${Person.getIdade()}`);
+    prompt(`Memória: ${Person.getMemoria()}`);
     prompt(`Profissão: ${Person.getProfissao()}`);
     console.clear()
 
@@ -106,6 +118,7 @@ while(ciclo <= 4){
 
             if(escolha === 1){
                 prompt(`[NARRADOR] - ...`);
+                Person.setMemoria();
             }else{
                 prompt(`[NARRADOR] - ${Person.getNome()} viu aquilo tudo acontecer, já imaginou se estivesse lá? O que teria acontecido?`);
                 console.clear();
@@ -117,7 +130,7 @@ while(ciclo <= 4){
                 prompt(`[NARRADOR] - ...`);
                 prompt(`[NARRADOR] - Pelo jeito não...`);
                 console.clear();
-                
+                Person.setMemoria();
             }
                 break;
             
@@ -191,14 +204,14 @@ while(ciclo <= 4){
                     prompt(`[NARRADOR] - ${Person.getNome()} sai ileso(a) desse mal entendido.`);
                     prompt(`[NARRADOR] - Mas por conta do susto, ${Person.getNome()} não vai ao trabalho e volta pra casa...`);
                     
-
+                    Person.setMemoria();
                     Person.setIdade();
                 }else{
                     prompt(`[NARRADOR] - É ${Person.getNome()}...`);
                     prompt(`[NARRADOR] - Isso não foi uma ideia muito inteligente...`);
                     prompt(`[NARRADOR] - ...`);
                     
-                    
+                    Person.setMemoria();
                     Person.setIdade();
                 }
 
@@ -214,6 +227,7 @@ while(ciclo <= 4){
                 prompt(`${Person.getNome()} : Acho que aquelas memórias foram reais, não sei como, mas já vivi esse dia...`);
                 prompt(`${Person.getNome()} : Irei voltar pra casa e pensar mais sobre isso.`);
                 
+                Person.setMemoria();
                 Person.setIdade();
             }
                 break;
@@ -259,6 +273,7 @@ while(ciclo <= 4){
                 prompt(`[SEGURANÇA] : Muitos físicos estão querendo sabotar seu projeto, não sabemos quem é confiável!`);
                 console.clear();
 
+                Person.setMemoria();
                 Person.setProfissao();
             }        
                 break;
