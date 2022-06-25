@@ -10,7 +10,7 @@
 ![blue line](https://user-images.githubusercontent.com/56365639/175077430-6669c3b4-45fe-4978-ac00-a31d6c75cec3.png)
   
 - # Módulo 01:
-  * Javascript básico. (se não houver pasta de atividades de determinada aula, as atividades foram realizadas no módulo 00)
+  * Javascript vanilla. (se não houver pasta de atividades de determinada aula, as atividades foram realizadas no módulo 00)
   #### Projetos:
    
    <details>
