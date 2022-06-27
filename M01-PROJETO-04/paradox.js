@@ -28,6 +28,7 @@ const Person = {
 
         'Cartão de acesso'
     ],
+
     setNome: function(novo){
         this._nome = novo;
     },
@@ -43,7 +44,6 @@ const Person = {
     setMemoria:function (){
         this._memoria += 33.3;
     },
-    
 
 
     getNome: function(){
