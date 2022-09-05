@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/Twikee/blueedtech-fullstack#readme",
   "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
     "prompt-sync": "^4.2.0"
   }
 }
