@@ -8,7 +8,6 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         text-decoration: none;
         font-family: Nunito;
-        
     }
 
     body{
@@ -39,6 +38,13 @@ export const Container = styled.div`
 	}
 `;
 
+export const Flex = styled.div`
+	display: flex;
+	justify-content: ${(props) => props.justify || "center"};
+	align-items: ${(props) => props.align || "center"};
+	flex-direction: ${(props) => props.direction || "column"};
+`;
+
 export const Input = styled.input`
 	width: 16rem;
 	padding: 0.2rem;
@@ -53,4 +59,51 @@ export const Button = styled.button`
 	border-radius: 8px;
 	border: none;
 	font-size: 1rem;
+	background-color: #e74646;
+
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.9;
+        color: "green"};
+    }
+`;
+
+export const Item = styled.li`
+	list-style: none;
+	padding: 0.2rem 0.8rem;
+	width: 20rem;
+	height: 1.6rem;
+	background-color: ${(props) => (props.checked ? "#ACFA9E" : "#f3f3f3")};
+    margin .6rem 0;
+    border-radius: 8px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+
+    p{
+        text-align: justify;
+        text-decoration-line: ${(props) =>
+			props.checked ? "line-through" : "none"};
+	    color: #2f2f2f;
+    }
+
+    i{
+        font-size: 1.2rem;
+        text-decoration-line: none;
+    }
+
+    button{
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        margin: 0 .4rem;
+
+        &:hover{
+            opacity: 0.7;
+            color: "green"};
+        }
+
+    
+    }
 `;
