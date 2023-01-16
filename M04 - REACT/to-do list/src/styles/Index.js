@@ -103,7 +103,5 @@ export const Item = styled.li`
             opacity: 0.7;
             color: "green"};
         }
-
-    
     }
 `;

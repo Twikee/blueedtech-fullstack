@@ -1,6 +1,7 @@
 import { Container, Input, Button, Flex, Item } from "./styles/Index";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
 	const url = "http://localhost:3000/tasks";
@@ -11,7 +12,7 @@ function App() {
 	const addTask = async () => {
 		if (!task) return alert("Preencha com uma tarefa!");
 		const newTask = {
-			id: Math.random(),
+			id: uuidv4(),
 			task: task,
 			checked: false,
 		};
