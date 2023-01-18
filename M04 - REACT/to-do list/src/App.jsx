@@ -1,13 +1,24 @@
 import { Container, Input, Button, Flex, Item } from "./styles/Index";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import { todoService } from "./helpers/Api";
+// import ReactModal from "react-modal";
+
+// ReactModal.setAppElement("#root");
 
 function App() {
-	const url = "http://localhost:3000/tasks";
-
 	const [task, setTask] = useState("");
 	const [listTasks, setListTasks] = useState([]);
+	// const [modalIsOpen, setIsOpen] = useState(false);
+	// const [taskEdit, setTaskEdit] = useState({});
+
+	// function openModal() {
+	// 	setIsOpen(true);
+	// }
+
+	// function closeModal() {
+	// 	setIsOpen(false);
+	// }
 
 	const addTask = async () => {
 		if (!task) return alert("Preencha com uma tarefa!");
@@ -17,20 +28,28 @@ function App() {
 			checked: false,
 		};
 
-		const data = await axios.post(url, newTask);
+		const data = await todoService.createTodo(newTask);
 
 		setListTasks([...listTasks, data.data]);
 		setTask("");
 	};
 
 	const loadTasks = async () => {
-		const data = await axios.get(url).then((response) => response.data);
-		setListTasks(data);
+		const resp = await todoService.getTodoList();
+		setListTasks(resp);
 	};
 
 	useEffect(() => {
 		loadTasks();
-	}, addTask);
+	}, [addTask]);
+
+	// const editTask = async (e) => {
+	// 	e.preventDefault();
+	// 	const task = setTaskEdit;
+	// 	const data = e.target.edit.value;
+
+	// 	return await todoService.updateTodo(task, data);
+	// };
 
 	const removeTask = (id) => {
 		const newListTask = listTasks.filter((task) => task.id !== id);
@@ -46,6 +65,34 @@ function App() {
 
 	return (
 		<>
+			{/* <ReactModal
+				isOpen={modalIsOpen}
+				onRequestClose={closeModal}
+				style={{
+					content: {
+						backgroundColor: "#2d2d2d",
+						borderRadius: "16px",
+						top: "50%",
+						left: "50%",
+						right: "auto",
+						bottom: "auto",
+						marginRight: "-50%",
+						transform: "translate(-50%, -50%)",
+					},
+				}}
+				contentLabel="Example Modal"
+			>
+				 <form onSubmit={editTask}>
+					<Input
+						name="edit"
+						type="text"
+						id="edit"
+						placeholder="Digite a nova task"
+					/>
+					<Button type="submit">Editar</Button>
+				</form> 
+			</ReactModal> */}
+
 			<Container>
 				<h1 className="title">TO-DO LIST</h1>
 				<Flex direction="row">
@@ -67,10 +114,18 @@ function App() {
 										toggleTask(task.id, task.checked)
 									}
 								>
-									<i class="bx bx-check"></i>
+									<i className="bx bx-check"></i>
 								</button>
+								{/* <button
+									onClick={() => {
+										openModal();
+										setTaskEdit(task.id);
+									}}
+								>
+									<i className="bx bx-edit"></i>
+								</button> */}
 								<button onClick={() => removeTask(task.id)}>
-									<i class="bx bx-trash"></i>
+									<i className="bx bx-trash"></i>
 								</button>
 							</Flex>
 						</Item>

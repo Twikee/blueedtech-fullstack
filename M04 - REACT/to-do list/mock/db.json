@@ -1,19 +1,24 @@
 {
-  "tasks": [
-    {
-      "id": "32765c7e-2cee-41b9-8b4e-cfbcf835d6fa",
-      "task": "C",
-      "checked": false
-    },
-    {
-      "id": "cccd8f90-aef0-4077-9d70-aa83fcbf39a1",
-      "task": "CH",
-      "checked": false
-    },
-    {
-      "id": "f3b5d8c8-15de-4b58-be65-5dbce47358ca",
-      "task": "J",
-      "checked": false
-    }
-  ]
+	"tasks": [
+		{
+			"id": "32765c7e-2cee-41b9-8b4e-cfbcf835d6fa",
+			"task": "C",
+			"checked": false
+		},
+		{
+			"id": "cccd8f90-aef0-4077-9d70-aa83fcbf39a1",
+			"task": "CH",
+			"checked": false
+		},
+		{
+			"id": "0d1bce5f-7af0-4133-a813-907c859366c7",
+			"task": "CASCAS",
+			"checked": false
+		},
+		{
+			"id": "ecce05f0-18d1-4caf-ba32-bf4fc236269e",
+			"task": "TESTE",
+			"checked": false
+		}
+	]
 }
