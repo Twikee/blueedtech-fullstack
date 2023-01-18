@@ -2,23 +2,24 @@ import { Container, Input, Button, Flex, Item } from "./styles/Index";
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { todoService } from "./helpers/Api";
-// import ReactModal from "react-modal";
+import ReactModal from "react-modal";
 
-// ReactModal.setAppElement("#root");
+ReactModal.setAppElement("#root");
 
-function App() {
+export function App() {
 	const [task, setTask] = useState("");
 	const [listTasks, setListTasks] = useState([]);
-	// const [modalIsOpen, setIsOpen] = useState(false);
-	// const [taskEdit, setTaskEdit] = useState({});
+	const [modalIsOpen, setIsOpen] = useState(false);
+	const [taskEdit, setTaskEdit] = useState({});
+	const [update, setUpdate] = useState(false);
 
-	// function openModal() {
-	// 	setIsOpen(true);
-	// }
+	function openModal() {
+		setIsOpen(true);
+	}
 
-	// function closeModal() {
-	// 	setIsOpen(false);
-	// }
+	function closeModal() {
+		setIsOpen(false);
+	}
 
 	const addTask = async () => {
 		if (!task) return alert("Preencha com uma tarefa!");
@@ -41,19 +42,22 @@ function App() {
 
 	useEffect(() => {
 		loadTasks();
-	}, [addTask]);
+	}, [update]);
 
-	// const editTask = async (e) => {
-	// 	e.preventDefault();
-	// 	const task = setTaskEdit;
-	// 	const data = e.target.edit.value;
+	const editTask = async (e) => {
+		e.preventDefault();
+		const task = taskEdit;
+		const data = e.target.edit.value;
 
-	// 	return await todoService.updateTodo(task, data);
-	// };
+		await todoService.updateTodo(task, data);
 
-	const removeTask = (id) => {
-		const newListTask = listTasks.filter((task) => task.id !== id);
-		setListTasks(newListTask);
+		setUpdate(!update);
+		closeModal();
+	};
+
+	const removeTask = async (id) => {
+		const deletedTask = await todoService.deleteTodo(id);
+		setUpdate(!update);
 	};
 
 	const toggleTask = (id, checked) => {
@@ -65,7 +69,7 @@ function App() {
 
 	return (
 		<>
-			{/* <ReactModal
+			<ReactModal
 				isOpen={modalIsOpen}
 				onRequestClose={closeModal}
 				style={{
@@ -82,7 +86,7 @@ function App() {
 				}}
 				contentLabel="Example Modal"
 			>
-				 <form onSubmit={editTask}>
+				<form onSubmit={editTask}>
 					<Input
 						name="edit"
 						type="text"
@@ -90,8 +94,8 @@ function App() {
 						placeholder="Digite a nova task"
 					/>
 					<Button type="submit">Editar</Button>
-				</form> 
-			</ReactModal> */}
+				</form>
+			</ReactModal>
 
 			<Container>
 				<h1 className="title">TO-DO LIST</h1>
@@ -116,14 +120,14 @@ function App() {
 								>
 									<i className="bx bx-check"></i>
 								</button>
-								{/* <button
+								<button
 									onClick={() => {
 										openModal();
 										setTaskEdit(task.id);
 									}}
 								>
 									<i className="bx bx-edit"></i>
-								</button> */}
+								</button>
 								<button onClick={() => removeTask(task.id)}>
 									<i className="bx bx-trash"></i>
 								</button>
@@ -135,5 +139,3 @@ function App() {
 		</>
 	);
 }
-
-export default App;
